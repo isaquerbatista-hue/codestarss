@@ -587,6 +587,7 @@ details.senha .campo{margin:14px 0 0}
       <button class="btn" id="lcConcluir" type="button">✅ Concluir lição</button>
       <p class="lc-falta" id="lcFalta" role="status"></p>
       <p class="lc-feita" id="lcFeita" hidden>✓ Você já concluiu esta lição.</p>
+      <button class="sec2" id="lcRefazer" type="button" hidden>🔁 Refazer lição</button>
     </div>
   </section>
 
@@ -1063,7 +1064,7 @@ mas.addEventListener('click', () => { const a = falasLista(); fi = (fi + 1) % a.
       (a gravação do progresso é feita pela função concluir_licao no banco)
    ===================================================================== */
 let exAtual = null, lcCod = { html:'', css:'', js:'' }, lcLang = 'html';
-let lcTmr = null, lcRun = 0, lcVerificou = false, lcRes = [], lcPassou = false, lcRecebeu = false, lcSoltaTab = false;
+let lcRefazendo = false, lcTmr = null, lcRun = 0, lcVerificou = false, lcRes = [], lcPassou = false, lcRecebeu = false, lcSoltaTab = false;
 const rascunhos = {};
 const ROTULO_ABA = { html:'🖥️ HTML', css:'🎨 CSS', js:'⚡ JavaScript' };
 
@@ -1143,13 +1144,16 @@ function mostraLc(){
 }
 function atualizaConcluir(){
   const l = licaoAberta, feita = feitas.has(l.id), btn = $('lcConcluir');
-  btn.hidden = feita; $('lcFeita').hidden = !feita;
+  btn.hidden = feita; $('lcFeita').hidden = !feita || lcRefazendo;
+  $('lcRefazer').hidden = !feita || !exAtual || lcRefazendo;
   btn.textContent = '✅ Concluir lição (+' + l.estrelas + ' ⭐)';
   if (!exAtual){ btn.disabled = false; $('lcFalta').textContent = ''; return; }
   const falta = exAtual.testes.length - lcRes.filter(Boolean).length, pronto = lcVerificou && falta === 0;
   btn.disabled = !pronto;
-  $('lcFalta').textContent = feita ? '' : pronto ? 'Tudo certo! Pode concluir a lição. ✨' : 'Cumpra todos os itens da lista para concluir a lição.';
-  if (pronto && !lcPassou && !feita) aviso('✨ Tudo certo! Agora é só concluir a lição.');
+  $('lcFalta').textContent = feita
+    ? (lcRefazendo ? (pronto ? 'Muito bem! Você refez a lição. ✨ As estrelas dela você já ganhou antes.' : '🔁 Refazendo para praticar: cumpra os itens da lista.') : '')
+    : pronto ? 'Tudo certo! Pode concluir a lição. ✨' : 'Cumpra todos os itens da lista para concluir a lição.';
+  if (pronto && !lcPassou && (!feita || lcRefazendo)) aviso(feita ? '✨ Muito bem! Você refez a lição.' : '✨ Tudo certo! Agora é só concluir a lição.');
   lcPassou = pronto;
 }
 function finalizaTestes(id, dr){
@@ -1184,7 +1188,7 @@ function iniciaExercicio(l){
 }
 function abreLicao(id){
   const l = licoes.find(x => x.id === id); if (!l) return;
-  licaoAberta = l; clearTimeout(lcTmr);
+  licaoAberta = l; clearTimeout(lcTmr); lcRefazendo = false;
   const m = modulos().find(x => x.id === l.modulo), n = m.l.indexOf(l) + 1, c = l.conteudo;
   exAtual = (c && c.exercicio) || null;
   $('lcTag').textContent = m.nome.toUpperCase() + ' • ' + (l.tipo === 'a' ? 'APRENDER' : 'PRATICAR');
@@ -1215,6 +1219,14 @@ $('lcDica').addEventListener('click', () => { $('lcDicaTxt').hidden = !$('lcDica
 dois($('lcSolucao'), () => { lcCod = { html:'', css:'', js:'', ...exAtual.solucao }; mostraLc(); rodaLicao(true); }, 'Clique de novo para ver a solução');
 dois($('lcReset'),   () => { lcCod = { html:'', css:'', js:'', ...exAtual.inicial }; lcVerificou = false; lcPassou = false; mostraLc(); rodaLicao(false); }, 'Clique de novo para recomeçar');
 
+$('lcRefazer').addEventListener('click', () => {
+  if (!exAtual) return;
+  lcRefazendo = true; delete rascunhos[licaoAberta.id];
+  lcCod = { html:'', css:'', js:'', ...exAtual.inicial }; lcLang = exAtual.abas[0];
+  lcVerificou = false; lcPassou = false; lcRes = [];
+  $('lcDicaTxt').hidden = true;
+  pintaChecks(); mostraLc(); rodaLicao(false); atualizaConcluir(); $('lcEd').focus();
+});
 $('lcConcluir').addEventListener('click', async () => {
   const l = licaoAberta, btn = $('lcConcluir'); if (!l || btn.disabled) return;
   btn.disabled = true;
