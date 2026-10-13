@@ -681,7 +681,7 @@ details.senha .campo{margin:14px 0 0}
   <footer class="fapp">
     <div class="logo" style="font-size:18px"><svg width="28" height="28" aria-hidden="true"><use href="#lg"/></svg><span>Code<b>Stars</b></span></div>
     <nav><a href="#">Ajuda</a><a href="#">Termos</a><a href="#">Privacidade</a></nav>
-    <span>© 2026 CodeStars</span>
+    <span>© 2026 CodeStars · v3 (lições)</span>
   </footer>
 </div>
 
@@ -1194,7 +1194,9 @@ function abreLicao(id){
   $('lcTag').textContent = m.nome.toUpperCase() + ' • ' + (l.tipo === 'a' ? 'APRENDER' : 'PRATICAR');
   $('lcTit').textContent = 'Lição ' + n + ': ' + l.titulo;
   $('lcAula').innerHTML = (c && c.passos && c.passos.length) ? c.passos.map(blocoAula).join('')
-    : '<p>O conteúdo desta lição ainda vai ser adicionado. Por enquanto, marque como concluída para testar o seu progresso, as estrelas e o ranking.</p>';
+    : (!licoes.some(x => x.conteudo)
+        ? '<div class="lc-dica">⚠️ <strong>As lições ainda não foram instaladas no banco.</strong> No Supabase, abra o <strong>SQL Editor</strong>, rode o arquivo <strong>licoes-conteudo.sql</strong> e recarregue esta página (Ctrl + Shift + R).</div>'
+        : '<p>O conteúdo desta lição ainda vai ser adicionado. Por enquanto, marque como concluída para testar o seu progresso, as estrelas e o ranking.</p>');
   $('lcPratica').hidden = !exAtual; $('lcGrid').classList.toggle('so-aula', !exAtual);
   if (exAtual) iniciaExercicio(l);
   atualizaConcluir();
