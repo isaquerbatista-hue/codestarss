@@ -299,6 +299,95 @@ details.senha .campo{margin:14px 0 0}
 .fapp{background:var(--fundo-linha);padding:24px 32px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;font-size:14px;color:var(--claro)}
 .fapp nav{display:flex;gap:20px}
 .fapp a:hover{color:#fff;text-decoration:underline}
+/* praticar */
+.seg{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}
+.seg-b{background:rgba(255,255,255,.1);border:2px solid transparent;border-radius:12px;padding:10px 18px;font-weight:800}
+.seg-b:hover{background:rgba(255,255,255,.16)}
+.seg-b.on{background:var(--esc);border-color:var(--amarelo)}
+.pr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.pr-card{display:flex;flex-direction:column;gap:8px;text-align:left;padding:20px;width:100%;color:var(--texto);position:relative;border:0;transition:transform .15s}
+.pr-card:hover{transform:translateY(-3px)}
+.pr-card h3{font:700 19px 'Chakra Petch',sans-serif;margin:0}
+.pr-card p{margin:0;color:var(--suave);font-size:14px;line-height:1.5;flex:1}
+.pr-tags{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding-right:64px}
+.badge{font:800 11px Nunito,sans-serif;letter-spacing:.4px;padding:4px 9px;border-radius:8px;background:#ece6c0;color:var(--texto)}
+.badge.facil{background:#c9f5df;color:#0b5a2b}.badge.medio{background:#ffe9b3;color:#6b4a00}
+.badge.html{background:#ffd9c2}.badge.css{background:#cfe6ff}.badge.js{background:#fff3a3}
+.pr-feito{position:absolute;top:16px;right:16px;font-weight:800;color:#0b5a2b;font-size:13px;text-align:right}
+.qz{padding:24px;max-width:760px;margin:0 auto}
+.qz-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
+.qz .voltar{color:var(--suave);margin:0}.qz .voltar:hover{color:var(--texto)}
+.qz-prog{font-weight:800;color:var(--suave);font-size:14px}
+.qz h2{font:700 22px 'Chakra Petch',sans-serif;margin:18px 0 16px;line-height:1.4}
+.qz code{background:#ece6c0;border-radius:6px;padding:1px 6px;font:14px ui-monospace,Menlo,Consolas,monospace}
+.qz-ops{display:grid;gap:10px;margin-bottom:16px}
+.qz-op{position:relative;display:block}
+.qz-op input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.qz-op span{display:block;padding:14px 16px;border-radius:12px;background:#e6e2d4;font-weight:700;border:2px solid transparent}
+.qz-op:hover span{border-color:#b9a2ff}
+.qz-op input:checked+span{background:#e9dcff;border-color:#522580}
+.qz-op input:focus-visible+span{outline:3px solid #522580;outline-offset:2px}
+.qz-op.certa input+span{background:var(--menta);border-color:#0b3b2a;color:#0b3b2a}
+.qz-op.errada input+span{background:#ffd5db;border-color:#c2253a;color:#7a1626}
+.qz-exp{background:#f1ecc4;border-radius:12px;padding:12px 14px;font-weight:600;line-height:1.6;margin:0 0 16px}
+.qz-btns{display:flex;gap:10px;flex-wrap:wrap}
+.qz-fim{text-align:center}
+.qz-nota{font:700 56px/1 'Chakra Petch',sans-serif;margin:8px 0 6px}
+.qz-fim p{margin:0 0 20px;color:var(--suave);font-weight:700}
+.qz-fim .qz-btns{justify-content:center}
+/* ranking */
+.podio{display:flex;justify-content:center;align-items:flex-end;gap:16px;margin:8px 0 28px}
+.pod{display:flex;flex-direction:column;align-items:center;gap:6px;width:150px;text-align:center}
+.rk-av{width:44px;height:44px;border-radius:50%;background:var(--amarelo);color:var(--texto);border:3px solid var(--esc);display:grid;place-items:center;font:700 18px 'Chakra Petch',sans-serif;overflow:hidden;flex:none}
+.rk-av img{width:100%;height:100%;object-fit:cover}
+.pod .rk-av{width:76px;height:76px;font-size:30px}
+.pod.p1 .rk-av{width:96px;height:96px;font-size:38px;border-color:#ffcc00}
+.pod .nome{font-weight:800;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pod .pts{font-weight:800;color:var(--claro);font-size:14px}
+.pod.eu .nome{background:var(--amarelo);color:var(--texto);border-radius:8px;padding:0 8px}
+.pod .pbase{width:100%;border-radius:12px 12px 0 0;display:grid;place-items:center;font:700 28px 'Chakra Petch',sans-serif;color:var(--texto)}
+.pod.p1 .pbase{height:96px;background:linear-gradient(#ffe27a,#ffcc00)}
+.pod.p2 .pbase{height:72px;background:linear-gradient(#e9e6f5,#bdb7d1)}
+.pod.p3 .pbase{height:56px;background:linear-gradient(#f2c9a0,#cd8f5b)}
+.rk-lista{display:grid;gap:6px}
+.rk-lista li{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;font-weight:700}
+.rk-pos{width:38px;font:700 16px 'Chakra Petch',sans-serif;color:var(--suave);text-align:center}
+.rk-nome{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rk-pts{font-weight:800;color:var(--suave)}
+.rk-lista li.eu{background:var(--amarelo)}
+.rk-lista li.eu .rk-pos,.rk-lista li.eu .rk-pts{color:var(--texto)}
+.rk-lista li.rk-sep{justify-content:center;color:var(--suave);padding:0}
+.ver-mais{display:inline-block;margin-top:14px;font-weight:800;color:#8a1f9c;text-decoration:underline}
+/* ajuda */
+.aj-nav{display:flex;gap:8px;flex-wrap:wrap}
+.aj-sec{margin:34px 0 14px;font:700 24px 'Chakra Petch',sans-serif;scroll-margin-top:16px}
+.guia{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px}
+.guia-c{padding:18px}
+.guia-n{width:32px;height:32px;border-radius:50%;background:var(--esc);color:#fff;display:grid;place-items:center;font:700 16px 'Chakra Petch',sans-serif;margin-bottom:10px}
+.guia-c h3{font:700 17px 'Chakra Petch',sans-serif;margin:0 0 6px}
+.guia-c p{margin:0;font-size:14px;color:var(--suave);line-height:1.55}
+details.faq{background:var(--creme);color:var(--texto);border-radius:14px;box-shadow:0 4px 0 var(--fundo-linha);padding:0 18px;margin:0 0 10px}
+details.faq summary{cursor:pointer;font-weight:800;padding:15px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:'＋';font-weight:800;flex:none}
+details.faq[open] summary::after{content:'−'}
+details.faq p{margin:0 0 16px;line-height:1.65;color:var(--suave)}
+.aj-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.atalhos{width:100%;border-collapse:collapse;font-size:14px}
+.atalhos td{padding:10px 6px;border-bottom:1px solid #e6e0b8;vertical-align:top;line-height:1.5}
+.atalhos tr:last-child td{border-bottom:0}
+.atalhos td:first-child{white-space:nowrap;width:1%}
+kbd{background:#fff;border:1px solid #cfc9a8;border-bottom-width:3px;border-radius:6px;padding:2px 7px;font:700 13px ui-monospace,Menlo,Consolas,monospace}
+.dicas{margin:0;padding-left:20px;line-height:1.75;font-size:14px}
+.dicas code,.aj-2 code{background:#ece6c0;border-radius:6px;padding:1px 6px;font:13px ui-monospace,Menlo,Consolas,monospace}
+.contato{padding:24px;max-width:720px}
+.contato .campo textarea{width:100%;min-height:130px;resize:vertical;background:#e6e2d4;border:2px solid transparent;border-radius:12px;padding:13px 14px;font:16px Nunito,sans-serif;color:var(--texto)}
+.contato .campo textarea:focus{outline:none;border-color:#522580;background:#fff;box-shadow:0 0 0 3px rgba(82,37,128,.2)}
+.aj-conta{font-size:13px;color:var(--suave);text-align:right;margin:4px 0 0}
+.msgs{margin-top:26px;padding-top:20px;border-top:2px solid #e6e0b8}
+.msgs h3{font:700 17px 'Chakra Petch',sans-serif;margin:0 0 12px}
+.msg-item{background:#f3efd0;border-radius:12px;padding:12px 14px;margin:0 0 10px;font-size:14px;line-height:1.55;overflow-wrap:anywhere}
+@media (max-width:900px){.aj-2{grid-template-columns:1fr}.podio{gap:8px}.pod{width:104px}.pod .rk-av{width:60px;height:60px;font-size:24px}.pod.p1 .rk-av{width:76px;height:76px}.qz{padding:18px}}
 /* tema claro (só dentro do painel) */
 :root[data-tema=claro]{--roxo:#f3edff;--esc:#e4d8fb;--fundo-linha:#cdb9f2;--claro:#5b4a7a}
 :root[data-tema=claro] body{color:#1e1230}
@@ -504,7 +593,7 @@ details.senha .campo{margin:14px 0 0}
 <div id="telaApp" hidden>
   <header id="hdrApp">
     <a class="logo" id="logoApp" href="#" aria-label="CodeStars"><svg width="36" height="36" aria-hidden="true"><use href="#lg"/></svg><span>Code<b>Stars</b></span></a>
-    <nav class="tabs" aria-label="Principal"><a class="on" href="#" data-v="painel" aria-current="page">Painel</a><a href="#">Praticar</a><a href="#" data-v="projetos">Projetos</a><a href="#">Ranking</a><a href="#">Ajuda</a></nav>
+    <nav class="tabs" aria-label="Principal"><a class="on" href="#" data-v="painel" aria-current="page">Painel</a><a href="#" data-v="praticar">Praticar</a><a href="#" data-v="projetos">Projetos</a><a href="#" data-v="ranking">Ranking</a><a href="#" data-v="ajuda">Ajuda</a></nav>
     <div class="dir">
       <span class="chip" id="chSeq" role="img" aria-label="0 dias seguidos" title="0 dias seguidos"><i>🔥</i><b id="nSeq">0</b></span>
       <span class="chip" id="chEst" role="img" aria-label="0 estrelas" title="0 estrelas"><i>⭐</i><b id="nEst">0</b></span>
@@ -548,6 +637,7 @@ details.senha .campo{margin:14px 0 0}
         </div>
         <div class="card mini"><h3>Ranking da semana</h3>
           <ol id="rankList"></ol>
+          <a class="ver-mais" href="#" data-v="ranking">Ver ranking completo →</a>
         </div>
       </aside>
     </div>
@@ -678,10 +768,120 @@ details.senha .campo{margin:14px 0 0}
     <p class="dica3">Dica: a tecla Tab insere 2 espaços. Aperte Esc e depois Tab para sair do editor. Seu código é salvo automaticamente na sua conta.</p>
   </section>
 
+  <!-- praticar -->
+  <section class="wrap" id="praticar" hidden>
+    <div class="ptopo"><div><h1>Praticar</h1><p class="fala">Treine o que você aprendeu. Aqui não vale estrela, então pode errar e repetir à vontade.</p></div></div>
+    <div class="seg" role="tablist" aria-label="Tipo de prática">
+      <button class="seg-b on" role="tab" aria-selected="true" data-p="desafios" type="button">💻 Desafios de código</button>
+      <button class="seg-b" role="tab" aria-selected="false" data-p="quizzes" type="button">❓ Quizzes</button>
+    </div>
+    <div class="lc-dica" id="prAviso" hidden>⚠️ <strong>Os desafios e quizzes ainda não foram instalados no banco.</strong> No Supabase, abra o <strong>SQL Editor</strong>, rode o arquivo <strong>praticar-ranking-ajuda.sql</strong> e recarregue esta página (Ctrl + Shift + R).</div>
+    <div id="prDesafios"><div class="pr-grid" id="prLista"></div></div>
+    <div id="prQuizzes" hidden>
+      <div class="pr-grid" id="qzLista"></div>
+      <div class="card qz" id="qzRun" hidden>
+        <div class="qz-top"><button class="voltar" id="qzSair" type="button">← Voltar aos quizzes</button><span class="qz-prog" id="qzProg"></span></div>
+        <div class="barra" aria-hidden="true"><i id="qzBarra"></i></div>
+        <h2 id="qzPerg" tabindex="-1"></h2>
+        <div class="qz-ops" id="qzOps" role="radiogroup" aria-labelledby="qzPerg"></div>
+        <p class="qz-exp" id="qzExp" role="status" hidden></p>
+        <div class="qz-btns"><button class="btn" id="qzVerifica" type="button">Verificar</button><button class="btn" id="qzProx" type="button" hidden>Próxima →</button></div>
+      </div>
+      <div class="card qz qz-fim" id="qzFim" hidden>
+        <h2 id="qzFimTit">Quiz concluído!</h2>
+        <div class="qz-nota" id="qzNota">0/0</div>
+        <p id="qzMsg"></p>
+        <div class="qz-btns"><button class="btn" id="qzRefaz" type="button">🔁 Fazer de novo</button><button class="sec2" id="qzVolta" type="button">Voltar aos quizzes</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ranking -->
+  <section class="wrap" id="ranking" hidden>
+    <div class="ptopo"><div><h1>Ranking</h1><p class="fala">Os alunos com mais estrelas de todos os tempos.</p></div></div>
+    <div class="lc-dica" id="rkAviso" hidden></div>
+    <div class="podio" id="rkPodio" role="list" aria-label="Pódio"></div>
+    <div class="card mini"><ol class="rk-lista" id="rkLista" aria-label="Classificação geral"></ol></div>
+    <p class="dica3" id="rkSua" role="status"></p>
+  </section>
+
+  <!-- ajuda -->
+  <section class="wrap" id="ajuda" hidden>
+    <div class="ptopo"><div><h1>Ajuda</h1><p class="fala">Dúvidas sobre o CodeStars? Comece por aqui.</p></div></div>
+    <div class="aj-nav" role="navigation" aria-label="Seções da ajuda">
+      <button class="sec2" data-aj="ajGuia" type="button">🚀 Guia rápido</button>
+      <button class="sec2" data-aj="ajFaq" type="button">❓ Perguntas frequentes</button>
+      <button class="sec2" data-aj="ajAtalhos" type="button">⌨️ Atalhos e dicas</button>
+      <button class="sec2" data-aj="ajContato" type="button">✉️ Fale com a gente</button>
+    </div>
+
+    <h2 class="aj-sec" id="ajGuia">🚀 Guia rápido</h2>
+    <div class="guia">
+      <div class="card guia-c"><div class="guia-n">1</div><h3>Escolha a lição</h3><p>No <strong>Painel</strong>, clique em <strong>Continuar lição</strong>. Leia a aula, que fica do lado esquerdo.</p></div>
+      <div class="card guia-c"><div class="guia-n">2</div><h3>Faça o exercício</h3><p>Escreva o código ao lado e clique em <strong>Executar e verificar</strong>. Quando todos os itens ficarem verdes, conclua a lição e ganhe estrelas.</p></div>
+      <div class="card guia-c"><div class="guia-n">3</div><h3>Treine em Praticar</h3><p>Desafios de código e quizzes para fixar o que aprendeu. Sem estrelas e sem pressão.</p></div>
+      <div class="card guia-c"><div class="guia-n">4</div><h3>Crie em Projetos</h3><p>Escreva HTML, CSS e JavaScript livremente e veja o resultado na hora. Tudo é salvo na sua conta.</p></div>
+      <div class="card guia-c"><div class="guia-n">5</div><h3>Acompanhe tudo</h3><p>Veja sua sequência 🔥, suas estrelas ⭐ e sua posição no <strong>Ranking</strong>. A meta diária pode ser mudada no perfil.</p></div>
+    </div>
+
+    <h2 class="aj-sec" id="ajFaq">❓ Perguntas frequentes</h2>
+    <div id="faqLista">
+      <details class="faq"><summary>Como eu ganho estrelas?</summary><p>Cada lição concluída da trilha vale estrelas (a maioria vale 3). Você ganha as estrelas só na primeira vez que conclui a lição. Os desafios e quizzes da página Praticar não dão estrelas: são só para treinar.</p></details>
+      <details class="faq"><summary>Como funciona a sequência de dias (🔥)?</summary><p>A sequência conta quantos dias seguidos você concluiu pelo menos uma lição. Se passar um dia inteiro sem concluir nenhuma, ela volta a zero. Os dias são contados pelo horário de Brasília.</p></details>
+      <details class="faq"><summary>Por que uma lição está bloqueada (🔒)?</summary><p>As lições são liberadas na ordem. Para abrir a próxima, conclua a anterior. O mesmo vale para os módulos: o JavaScript só abre depois que você terminar o CSS3.</p></details>
+      <details class="faq"><summary>O botão "Concluir lição" está cinza. O que faço?</summary><p>Ele só libera quando todos os itens da lista do exercício estiverem verdes (✓). Clique em <strong>Executar e verificar</strong> para ver o que ainda falta. Se travar, use o botão <strong>Dica</strong> ou <strong>Ver solução</strong>.</p></details>
+      <details class="faq"><summary>Posso refazer uma lição?</summary><p>Sim! Abra uma lição já concluída e clique em <strong>Refazer lição</strong>. As estrelas não são dadas de novo, mas é ótimo para praticar.</p></details>
+      <details class="faq"><summary>Meu código não funciona e não aparece nada. E agora?</summary><p>Confira se todas as tags foram fechadas, se os textos estão entre aspas e se cada declaração de CSS termina com ponto e vírgula. No JavaScript, olhe o <strong>Console</strong> abaixo do resultado: os erros aparecem lá, em vermelho.</p></details>
+      <details class="faq"><summary>Como troco minha foto, meu nome ou o tema?</summary><p>Clique na sua foto (ou na letra) no canto superior direito para abrir o perfil. Lá você também muda a meta diária e a senha.</p></details>
+      <details class="faq"><summary>Como o ranking é calculado?</summary><p>O Ranking soma todas as estrelas que você ganhou nas lições. Em caso de empate, fica na frente quem criou a conta primeiro. No Painel você também vê o ranking da semana.</p></details>
+      <details class="faq"><summary>Meus projetos ficam salvos?</summary><p>Sim. O que você escreve em Projetos é salvo automaticamente na sua conta (procure o aviso ☁️ Salvo). Você pode abrir de qualquer computador.</p></details>
+      <details class="faq"><summary>Esqueci minha senha. Como recupero?</summary><p>Na tela de entrada, clique em <strong>Esqueci minha senha</strong> e digite o seu e-mail: enviaremos um link para criar uma nova senha. Se você entra com o Google, não existe senha do CodeStars; use o botão <strong>Continuar com Google</strong>.</p></details>
+      <details class="faq"><summary>O lembrete diário e o idioma já funcionam?</summary><p>O horário do lembrete e o idioma são salvos no seu perfil, mas ainda não enviamos notificações nem traduzimos os textos do site. Esses recursos ainda estão em construção.</p></details>
+      <details class="faq"><summary>Como apago minha conta?</summary><p>Ainda não existe um botão para isso. Envie uma mensagem pelo formulário aqui embaixo (assunto <strong>Outro</strong>) pedindo a exclusão da conta.</p></details>
+    </div>
+
+    <h2 class="aj-sec" id="ajAtalhos">⌨️ Atalhos e dicas do editor</h2>
+    <div class="aj-2">
+      <div class="card mini"><h3>Atalhos de teclado</h3>
+        <table class="atalhos"><tbody>
+          <tr><td><kbd>Tab</kbd></td><td>Insere 2 espaços (indentação) no editor.</td></tr>
+          <tr><td><kbd>Esc</kbd> e depois <kbd>Tab</kbd></td><td>Sai do editor e vai para o próximo botão (para quem usa só o teclado).</td></tr>
+          <tr><td><kbd>Ctrl</kbd> + <kbd>Z</kbd></td><td>Desfaz. No Mac: <kbd>⌘</kbd> + <kbd>Z</kbd>.</td></tr>
+          <tr><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></td><td>Refaz o que você desfez.</td></tr>
+          <tr><td><kbd>Ctrl</kbd> + <kbd>A</kbd></td><td>Seleciona todo o código.</td></tr>
+          <tr><td><kbd>Ctrl</kbd> + <kbd>C</kbd> / <kbd>X</kbd> / <kbd>V</kbd></td><td>Copia, recorta e cola.</td></tr>
+        </tbody></table>
+      </div>
+      <div class="card mini"><h3>Dicas do editor</h3>
+        <ul class="dicas">
+          <li>O resultado atualiza sozinho cerca de meio segundo depois que você para de digitar.</li>
+          <li><code>console.log(...)</code> mostra valores no <strong>Console</strong>. Os erros de JavaScript aparecem em vermelho.</li>
+          <li>Comentários: <code>&lt;!-- --&gt;</code> no HTML, <code>/* */</code> no CSS e <code>//</code> no JavaScript.</li>
+          <li>Se algo parou de funcionar, comente trechos do código para descobrir qual deles causa o erro.</li>
+          <li>Em <strong>Projetos</strong>, o botão <strong>✨ Exemplo</strong> carrega um código de demonstração.</li>
+          <li>Nas lições, <strong>↺ Recomeçar</strong> volta ao código inicial e <strong>👀 Ver solução</strong> mostra uma resposta (clique duas vezes para confirmar).</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="aj-sec" id="ajContato">✉️ Fale com a gente</h2>
+    <form class="card contato" id="ajForm" novalidate>
+      <p class="dica" style="margin:0 0 16px">Não achou a resposta? Conte o que está acontecendo. A mensagem é enviada junto com a sua conta, então a gente sabe quem escreveu.</p>
+      <div class="campo"><label for="ajAssunto">Assunto</label>
+        <select id="ajAssunto"><option value="duvida">Dúvida</option><option value="problema">Problema técnico</option><option value="sugestao">Sugestão</option><option value="outro">Outro</option></select></div>
+      <div class="campo"><label for="ajMsg">Mensagem</label>
+        <textarea id="ajMsg" maxlength="1000" placeholder="Escreva aqui…"></textarea>
+        <div class="aj-conta" id="ajConta">0/1000</div>
+        <p class="err" id="ajErro" role="alert"></p></div>
+      <button class="btn" id="ajEnviar" type="submit">Enviar mensagem</button>
+      <div class="msgs" id="ajMsgs" hidden></div>
+    </form>
+  </section>
+
   <footer class="fapp">
     <div class="logo" style="font-size:18px"><svg width="28" height="28" aria-hidden="true"><use href="#lg"/></svg><span>Code<b>Stars</b></span></div>
-    <nav><a href="#">Ajuda</a><a href="#">Termos</a><a href="#">Privacidade</a></nav>
-    <span>© 2026 CodeStars · v3 (lições)</span>
+    <nav><a href="#" data-v="ajuda">Ajuda</a><a href="#">Termos</a><a href="#">Privacidade</a></nav>
+    <span>© 2026 CodeStars · v4 (praticar, ranking e ajuda)</span>
   </footer>
 </div>
 
@@ -764,18 +964,22 @@ function telaDe(t){
   $('telaApp').hidden    = t !== 'app';
   if (t !== 'app') document.documentElement.dataset.tema = 'escuro';
 }
-const VIEWS = ['painel','licao','perfil','projetos'];
+const VIEWS = ['painel','licao','perfil','projetos','praticar','ranking','ajuda'];
 let editorIniciado = false;
 function vai(v){
   VIEWS.forEach(id => $(id).hidden = (id !== v));
+  const aba = (v === 'licao' && ctxLicao.desafio) ? 'praticar' : v;
   document.querySelectorAll('.tabs a[data-v]').forEach(a => {
-    const on = a.dataset.v === v; a.classList.toggle('on', on);
+    const on = a.dataset.v === aba; a.classList.toggle('on', on);
     if (on) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
   });
   if (v === 'projetos' && !editorIniciado){ editorIniciado = true; carregaProjeto(projAtual); }
+  if (v === 'praticar') pintaPratica();
+  if (v === 'ranking') carregaRankingGeral();
+  if (v === 'ajuda') carregaMensagens();
   scrollTo(0,0);
 }
-document.querySelectorAll('.tabs a[data-v]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); vai(a.dataset.v); }));
+document.querySelectorAll('a[data-v]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); vai(a.dataset.v); }));
 document.querySelectorAll('.tabs a:not([data-v])').forEach(a => a.addEventListener('click', e => e.preventDefault()));
 $('logoApp').addEventListener('click', e => { e.preventDefault(); vai('painel'); });
 
@@ -907,7 +1111,7 @@ let licoes  = [];             // catálogo (tabela licoes)
 let feitas  = new Set();      // ids das lições concluídas
 let resumo  = { estrelas:0, licoes_feitas:0, hoje:0, sequencia:0, semana_ini:null, dias_semana:[] };
 let ranking = [];             // linhas de ranking_semana()
-let projetos = [], projAtual = null;
+let projetos = [], projAtual = null, desafios = [], quizzes = [], praticaOk = true;
 let moduloSel = null, licaoAberta = null;
 
 function nomeInicial(u){
@@ -934,6 +1138,9 @@ async function carregaTudo(){
   }
   licoes = l.data; feitas = new Set(pr.data.map(x => x.licao_id));
   resumo = rs.data; ranking = rk.data || []; projetos = pj.data;
+  // Praticar: se as tabelas ainda não existirem, o site continua funcionando e a página Praticar avisa
+  const [dz, qz] = await Promise.all([ sb.from('desafios').select('*').order('ordem'), sb.from('quizzes').select('*').order('ordem') ]);
+  praticaOk = !dz.error && !qz.error; desafios = dz.error ? [] : dz.data; quizzes = qz.error ? [] : qz.data;
   if (!projetos.length) await criaProjeto('Meu primeiro projeto');
   projAtual = projetos.slice().sort((a,b) => b.atualizado_em.localeCompare(a.atualizado_em))[0];
 }
@@ -1063,6 +1270,7 @@ mas.addEventListener('click', () => { const a = falasLista(); fi = (fi + 1) % a.
    7) LIÇÃO: aula, exercício com correção automática e conclusão
       (a gravação do progresso é feita pela função concluir_licao no banco)
    ===================================================================== */
+let ctxLicao = { desafio:false, voltar:'painel' };
 let exAtual = null, lcCod = { html:'', css:'', js:'' }, lcLang = 'html';
 let lcRefazendo = false, lcTmr = null, lcRun = 0, lcVerificou = false, lcRes = [], lcPassou = false, lcRecebeu = false, lcSoltaTab = false;
 const rascunhos = {};
@@ -1142,18 +1350,20 @@ function mostraLc(){
   $('lcEd').value = lcCod[lcLang];
   document.querySelectorAll('#lcAbas .aba').forEach(a => { const on = a.dataset.l === lcLang; a.classList.toggle('on', on); a.setAttribute('aria-selected', on); });
 }
+function jaFeita(l){ return ctxLicao.desafio ? praticaFeita.has(l.id.replace('desafio:', '')) : feitas.has(l.id); }
 function atualizaConcluir(){
-  const l = licaoAberta, feita = feitas.has(l.id), btn = $('lcConcluir');
+  const l = licaoAberta, feita = jaFeita(l), btn = $('lcConcluir'), d = ctxLicao.desafio, coisa = d ? 'desafio' : 'lição';
   btn.hidden = feita; $('lcFeita').hidden = !feita || lcRefazendo;
-  $('lcRefazer').hidden = !feita || !exAtual || lcRefazendo;
-  btn.textContent = '✅ Concluir lição (+' + l.estrelas + ' ⭐)';
+  $('lcFeita').textContent = d ? '✓ Você já fez este desafio.' : '✓ Você já concluiu esta lição.';
+  $('lcRefazer').hidden = !feita || !exAtual || lcRefazendo; $('lcRefazer').textContent = '🔁 Refazer ' + coisa;
+  btn.textContent = d ? '✅ Concluir desafio' : '✅ Concluir lição (+' + l.estrelas + ' ⭐)';
   if (!exAtual){ btn.disabled = false; $('lcFalta').textContent = ''; return; }
   const falta = exAtual.testes.length - lcRes.filter(Boolean).length, pronto = lcVerificou && falta === 0;
   btn.disabled = !pronto;
   $('lcFalta').textContent = feita
-    ? (lcRefazendo ? (pronto ? 'Muito bem! Você refez a lição. ✨ As estrelas dela você já ganhou antes.' : '🔁 Refazendo para praticar: cumpra os itens da lista.') : '')
-    : pronto ? 'Tudo certo! Pode concluir a lição. ✨' : 'Cumpra todos os itens da lista para concluir a lição.';
-  if (pronto && !lcPassou && (!feita || lcRefazendo)) aviso(feita ? '✨ Muito bem! Você refez a lição.' : '✨ Tudo certo! Agora é só concluir a lição.');
+    ? (lcRefazendo ? (pronto ? 'Muito bem! Você refez o ' + coisa + '. ✨' + (d ? '' : ' As estrelas dela você já ganhou antes.') : '🔁 Refazendo para praticar: cumpra os itens da lista.') : '')
+    : pronto ? 'Tudo certo! Pode concluir o ' + coisa + '. ✨' : 'Cumpra todos os itens da lista para concluir.';
+  if (pronto && !lcPassou && (!feita || lcRefazendo)) aviso(feita ? '✨ Muito bem! Você refez o ' + coisa + '.' : '✨ Tudo certo! Agora é só concluir.');
   lcPassou = pronto;
 }
 function finalizaTestes(id, dr){
@@ -1188,11 +1398,15 @@ function iniciaExercicio(l){
 }
 function abreLicao(id){
   const l = licoes.find(x => x.id === id); if (!l) return;
+  const m = modulos().find(x => x.id === l.modulo), n = m.l.indexOf(l) + 1;
+  ctxLicao = { desafio:false, voltar:'painel' };
+  mostraLicao(l, m.nome.toUpperCase() + ' • ' + (l.tipo === 'a' ? 'APRENDER' : 'PRATICAR'), 'Lição ' + n + ': ' + l.titulo);
+}
+function mostraLicao(l, tag, titulo){
   licaoAberta = l; clearTimeout(lcTmr); lcRefazendo = false;
-  const m = modulos().find(x => x.id === l.modulo), n = m.l.indexOf(l) + 1, c = l.conteudo;
+  const c = l.conteudo;
   exAtual = (c && c.exercicio) || null;
-  $('lcTag').textContent = m.nome.toUpperCase() + ' • ' + (l.tipo === 'a' ? 'APRENDER' : 'PRATICAR');
-  $('lcTit').textContent = 'Lição ' + n + ': ' + l.titulo;
+  $('lcTag').textContent = tag; $('lcTit').textContent = titulo;
   $('lcAula').innerHTML = (c && c.passos && c.passos.length) ? c.passos.map(blocoAula).join('')
     : (!licoes.some(x => x.conteudo)
         ? '<div class="lc-dica">⚠️ <strong>As lições ainda não foram instaladas no banco.</strong> No Supabase, abra o <strong>SQL Editor</strong>, rode o arquivo <strong>licoes-conteudo.sql</strong> e recarregue esta página (Ctrl + Shift + R).</div>'
@@ -1203,7 +1417,7 @@ function abreLicao(id){
   vai('licao');
   if (exAtual) rodaLicao(false);
 }
-function saiLicao(){ clearTimeout(lcTmr); lcRun++; $('lcRes').srcdoc = ''; vai('painel'); }
+function saiLicao(){ clearTimeout(lcTmr); lcRun++; $('lcRes').srcdoc = ''; vai(ctxLicao.voltar); }
 $('lcVoltar').addEventListener('click', saiLicao);
 
 $('lcEd').addEventListener('input', () => {
@@ -1231,6 +1445,9 @@ $('lcRefazer').addEventListener('click', () => {
 });
 $('lcConcluir').addEventListener('click', async () => {
   const l = licaoAberta, btn = $('lcConcluir'); if (!l || btn.disabled) return;
+  if (ctxLicao.desafio){   // desafio da página Praticar: só marca como feito, sem estrelas
+    praticaFeita.add(l.id.replace('desafio:', '')); salvaPraticaLocal(); saiLicao(); aviso('✅ Desafio concluído! Mandou bem. 🎉'); return;
+  }
   btn.disabled = true;
   try{
     const antes = modulos().find(x => x.id === l.modulo), metaAntes = resumo.hoje >= perfil.meta_diaria;
@@ -1528,6 +1745,162 @@ $('exec').addEventListener('click', roda);
 $('limpaCons').addEventListener('click', () => { $('cons').textContent = ''; });
 
 /* =====================================================================
+   9b) PRATICAR (desafios + quizzes), RANKING GERAL e AJUDA
+   ===================================================================== */
+const praticaFeita = new Set(), quizMelhor = {};
+let praticaAba = 'desafios';
+function chavePratica(){ return 'cs-pratica-' + (usuario ? usuario.id : 'anon'); }
+function carregaPraticaLocal(){
+  praticaFeita.clear(); Object.keys(quizMelhor).forEach(k => delete quizMelhor[k]);
+  try{ const s = JSON.parse(localStorage.getItem(chavePratica()) || 'null'); if (s){ (s.desafios || []).forEach(i => praticaFeita.add(i)); Object.assign(quizMelhor, s.quiz || {}); } }catch(e){}
+}
+function salvaPraticaLocal(){ try{ localStorage.setItem(chavePratica(), JSON.stringify({ desafios:[...praticaFeita], quiz:quizMelhor })); }catch(e){} }
+
+// ---- Praticar
+function mostraAbaPratica(a){
+  praticaAba = a;
+  document.querySelectorAll('.seg-b').forEach(b => { const on = b.dataset.p === a; b.classList.toggle('on', on); b.setAttribute('aria-selected', on); });
+  $('prDesafios').hidden = a !== 'desafios'; $('prQuizzes').hidden = a !== 'quizzes';
+}
+function pintaPratica(){
+  $('prAviso').hidden = praticaOk && (desafios.length > 0 || quizzes.length > 0);
+  const rot = { html:'HTML', css:'CSS', js:'JavaScript' };
+  $('prLista').innerHTML = desafios.map(d =>
+    `<button class="card pr-card" data-id="${esc(d.id)}" type="button">${praticaFeita.has(d.id) ? '<span class="pr-feito">✓ Feito</span>' : ''}<div class="pr-tags"><span class="badge ${esc(d.nivel)}">${d.nivel === 'facil' ? 'FÁCIL' : 'MÉDIO'}</span>${(d.tags || []).map(t => '<span class="badge ' + esc(t) + '">' + esc(rot[t] || t) + '</span>').join('')}</div><h3>${esc(d.titulo)}</h3><p>${esc(d.descricao)}</p></button>`).join('');
+  $('qzLista').innerHTML = quizzes.map(q => {
+    const n = q.perguntas.length, m = quizMelhor[q.id];
+    return `<button class="card pr-card" data-id="${esc(q.id)}" type="button">${m != null ? '<span class="pr-feito">Melhor: ' + m + '/' + n + '</span>' : ''}<div class="pr-tags"><span class="badge ${esc(q.modulo || '')}">${n} PERGUNTAS</span></div><h3>${esc(q.titulo)}</h3><p>${esc(q.descricao)}</p></button>`;
+  }).join('');
+  mostraAbaPratica(praticaAba);
+}
+document.querySelectorAll('.seg-b').forEach(b => b.addEventListener('click', () => mostraAbaPratica(b.dataset.p)));
+$('prLista').addEventListener('click', e => { const c = e.target.closest('.pr-card'); if (c) abreDesafio(c.dataset.id); });
+$('qzLista').addEventListener('click', e => { const c = e.target.closest('.pr-card'); if (c) abreQuiz(c.dataset.id); });
+
+function abreDesafio(id){
+  const d = desafios.find(x => x.id === id); if (!d) return;
+  ctxLicao = { desafio:true, voltar:'praticar' };
+  mostraLicao({ id:'desafio:' + d.id, titulo:d.titulo, estrelas:0, tipo:'p', conteudo:d.conteudo }, 'DESAFIO • ' + (d.nivel === 'facil' ? 'FÁCIL' : 'MÉDIO'), d.titulo);
+}
+
+// ---- Quiz
+let qzAtual = null, qzIdx = 0, qzAcertos = 0, qzRespondida = false;
+function embaralha(a){ a = a.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function abreQuiz(id){
+  qzAtual = quizzes.find(x => x.id === id); if (!qzAtual) return;
+  qzIdx = 0; qzAcertos = 0;
+  $('qzLista').hidden = true; $('qzFim').hidden = true; $('qzRun').hidden = false;
+  mostraPergunta(); scrollTo(0, 0);
+}
+function mostraPergunta(){
+  const q = qzAtual.perguntas[qzIdx], tot = qzAtual.perguntas.length;
+  qzRespondida = false;
+  $('qzProg').textContent = 'Pergunta ' + (qzIdx + 1) + ' de ' + tot;
+  $('qzBarra').style.width = (qzIdx / tot * 100) + '%';
+  $('qzPerg').innerHTML = md(q.p);
+  $('qzOps').innerHTML = embaralha(q.opcoes.map((_, i) => i)).map(orig =>
+    `<label class="qz-op"><input type="radio" name="qzop" value="${orig}"><span>${md(q.opcoes[orig])}</span></label>`).join('');
+  $('qzExp').hidden = true; $('qzVerifica').hidden = false; $('qzVerifica').disabled = true; $('qzProx').hidden = true;
+  $('qzPerg').focus({ preventScroll:true });
+}
+$('qzOps').addEventListener('change', () => { if (!qzRespondida) $('qzVerifica').disabled = false; });
+$('qzVerifica').addEventListener('click', () => {
+  const sel = document.querySelector('#qzOps input:checked'); if (!sel || qzRespondida) return;
+  const q = qzAtual.perguntas[qzIdx], tot = qzAtual.perguntas.length, marcada = +sel.value, certo = marcada === q.certa;
+  qzRespondida = true; if (certo) qzAcertos++;
+  document.querySelectorAll('#qzOps .qz-op').forEach(l => {
+    const inp = l.querySelector('input'), i = +inp.value; inp.disabled = true;
+    if (i === q.certa) l.classList.add('certa'); else if (i === marcada) l.classList.add('errada');
+  });
+  $('qzExp').hidden = false; $('qzExp').innerHTML = (certo ? '✅ <strong>Isso mesmo!</strong> ' : '❌ <strong>Quase!</strong> ') + md(q.explicacao);
+  $('qzBarra').style.width = ((qzIdx + 1) / tot * 100) + '%';
+  $('qzVerifica').hidden = true; $('qzProx').hidden = false;
+  $('qzProx').textContent = qzIdx + 1 < tot ? 'Próxima →' : 'Ver resultado'; $('qzProx').focus();
+});
+$('qzProx').addEventListener('click', () => { qzIdx++; if (qzIdx < qzAtual.perguntas.length) mostraPergunta(); else fimQuiz(); });
+function fimQuiz(){
+  const tot = qzAtual.perguntas.length, p = qzAcertos / tot;
+  $('qzRun').hidden = true; $('qzFim').hidden = false;
+  quizMelhor[qzAtual.id] = Math.max(quizMelhor[qzAtual.id] || 0, qzAcertos); salvaPraticaLocal();
+  $('qzFimTit').textContent = qzAtual.titulo + ' concluído!';
+  $('qzNota').textContent = qzAcertos + '/' + tot;
+  $('qzMsg').textContent = p === 1 ? 'Perfeito! Você acertou tudo! 🎉' : p >= .7 ? 'Muito bem! Você está dominando o assunto. 💪' : p >= .4 ? 'Bom começo! Releia as lições e tente de novo. 📖' : 'Sem problema: errar faz parte. Revise a trilha e tente outra vez. 🌱';
+}
+function sairQuiz(){ $('qzRun').hidden = true; $('qzFim').hidden = true; $('qzLista').hidden = false; pintaPratica(); }
+$('qzSair').addEventListener('click', sairQuiz); $('qzVolta').addEventListener('click', sairQuiz);
+$('qzRefaz').addEventListener('click', () => abreQuiz(qzAtual.id));
+
+// ---- Ranking geral (função ranking_geral no banco)
+function avatarEl(r){ const a = document.createElement('span'); a.className = 'rk-av'; a.setAttribute('aria-hidden', 'true'); pinta(a, r); return a; }
+function pintaRankingGeral(rows){
+  const top = rows.filter(r => Number(r.posicao) <= 3 && Number(r.estrelas) > 0);
+  const ordem = [2, 1, 3].map(p => top.find(r => Number(r.posicao) === p)).filter(Boolean);
+  const medalha = { 1:'🥇', 2:'🥈', 3:'🥉' };
+  $('rkPodio').replaceChildren(...ordem.map(r => {
+    const pos = Number(r.posicao), d = document.createElement('div'); d.className = 'pod p' + pos + (r.eu ? ' eu' : ''); d.setAttribute('role', 'listitem');
+    const nome = document.createElement('div'); nome.className = 'nome'; nome.textContent = r.nome + (r.eu ? ' (você)' : '');
+    const pts = document.createElement('div'); pts.className = 'pts'; pts.textContent = r.estrelas + ' ⭐';
+    const base = document.createElement('div'); base.className = 'pbase'; base.textContent = medalha[pos];
+    d.append(avatarEl(r), nome, pts, base); return d;
+  }));
+  const resto = rows.filter(r => Number(r.posicao) > 3), itens = []; let ult = 3;
+  resto.forEach(r => {
+    const pos = Number(r.posicao);
+    if (pos > ult + 1){ const s = document.createElement('li'); s.className = 'rk-sep'; s.setAttribute('aria-hidden', 'true'); s.textContent = '⋮'; itens.push(s); }
+    const li = document.createElement('li'); if (r.eu) li.className = 'eu';
+    const p = document.createElement('span'); p.className = 'rk-pos'; p.textContent = pos + 'º';
+    const n = document.createElement('span'); n.className = 'rk-nome'; n.textContent = r.nome + (r.eu ? ' (você)' : '');
+    const e = document.createElement('span'); e.className = 'rk-pts'; e.textContent = r.estrelas + ' ⭐';
+    li.append(p, avatarEl(r), n, e); itens.push(li); ult = pos;
+  });
+  $('rkLista').replaceChildren(...itens);
+  $('rkLista').parentElement.hidden = itens.length === 0;
+  const eu = rows.find(r => r.eu);
+  $('rkSua').textContent = !rows.some(r => Number(r.estrelas) > 0) ? 'Ninguém tem estrelas ainda. Conclua uma lição e seja o primeiro! 🌟'
+    : (eu && Number(eu.estrelas) > 0) ? 'Você está em ' + Number(eu.posicao) + 'º lugar, com ' + eu.estrelas + ' ⭐.' : 'Conclua uma lição para entrar no ranking! 🌟';
+}
+async function carregaRankingGeral(){
+  $('rkAviso').hidden = true;
+  const { data, error } = await sb.rpc('ranking_geral', { p_limite: 20 });
+  if (error){
+    $('rkAviso').hidden = false; $('rkPodio').replaceChildren(); $('rkLista').replaceChildren(); $('rkLista').parentElement.hidden = true; $('rkSua').textContent = '';
+    $('rkAviso').innerHTML = /function|schema cache|could not find/i.test(error.message || '')
+      ? '⚠️ <strong>O ranking geral ainda não foi instalado no banco.</strong> No Supabase, abra o <strong>SQL Editor</strong>, rode o arquivo <strong>praticar-ranking-ajuda.sql</strong> e recarregue esta página.'
+      : 'Não consegui carregar o ranking agora. ' + esc(traduz(error));
+    return;
+  }
+  pintaRankingGeral(data || []);
+}
+
+// ---- Ajuda
+const ASSUNTOS = { duvida:'Dúvida', problema:'Problema técnico', sugestao:'Sugestão', outro:'Outro' };
+document.querySelectorAll('[data-aj]').forEach(b => b.addEventListener('click', () => $(b.dataset.aj).scrollIntoView({ behavior: rmov ? 'auto' : 'smooth', block:'start' })));
+$('ajMsg').addEventListener('input', () => { $('ajConta').textContent = $('ajMsg').value.length + '/1000'; $('ajErro').textContent = ''; });
+async function carregaMensagens(){
+  const box = $('ajMsgs');
+  const { data, error } = await sb.from('mensagens_ajuda').select('assunto,mensagem,criado_em').order('criado_em', { ascending:false }).limit(5);
+  if (error || !data || !data.length){ box.hidden = true; box.innerHTML = ''; return; }
+  box.hidden = false;
+  box.innerHTML = '<h3>Suas mensagens enviadas</h3>' + data.map(m =>
+    `<div class="msg-item"><strong>${esc(ASSUNTOS[m.assunto] || m.assunto)}</strong> · ${esc(new Date(m.criado_em).toLocaleString('pt-BR', { dateStyle:'short', timeStyle:'short' }))}<br>${esc(m.mensagem)}</div>`).join('');
+}
+$('ajForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const msg = $('ajMsg').value.trim(), er = $('ajErro'); er.textContent = '';
+  if (msg.length < 10){ er.textContent = 'Escreva pelo menos 10 caracteres para a gente entender.'; $('ajMsg').focus(); return; }
+  const btn = $('ajEnviar'); btn.disabled = true; btn.textContent = 'Enviando…';
+  const { error } = await sb.from('mensagens_ajuda').insert({ user_id: usuario.id, assunto: $('ajAssunto').value, mensagem: msg });
+  btn.disabled = false; btn.textContent = 'Enviar mensagem';
+  if (error){
+    er.textContent = /relation|schema cache|does not exist|could not find/i.test(error.message || '')
+      ? 'O formulário ainda não foi instalado no banco (rode o praticar-ranking-ajuda.sql no Supabase).' : traduz(error);
+    return;
+  }
+  $('ajMsg').value = ''; $('ajConta').textContent = '0/1000';
+  aviso('✅ Mensagem enviada! Obrigado por escrever.'); carregaMensagens();
+});
+
+/* =====================================================================
    10) ENTRAR / SAIR  (reage ao Supabase Auth)
    ===================================================================== */
 let entrando = false;
@@ -1535,7 +1908,7 @@ async function entrou(user){
   usuario = user; telaDe('carregando');
   $('cargaErro').hidden = true; $('splTxt').hidden = false;
   try{
-    await carregaTudo();
+    await carregaTudo(); carregaPraticaLocal();
     moduloSel = null; editorIniciado = false;
     pintaApp(); telaDe('app'); vai('painel');
   }catch (err){
