@@ -10,6 +10,8 @@
    BASE (compartilhado pelo login e pelo painel)
    ===================================================================== */
 :root{
+  --escala:.85;            /* tamanho do site: .85 = 85% (como Ctrl - no navegador). Use 1 para tamanho normal */
+  --vh100:100vh;           /* altura da tela (o JavaScript ajusta quando há zoom) */
   --roxo:#2c1450; --esc:#3a1b66; --fundo-linha:#1c0b36; --roxo-esc:#1c0b36;
   --creme:#fffde3; --amarelo:#f2f26b; --menta:#7ff0c0; --verde:#10b981;
   --texto:#1e1230; --suave:#5b5470; --claro:#e9dcff; --campo:#e6e2d4; --erro:#c2253a;
@@ -17,13 +19,14 @@
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (min-width:1000px){html{zoom:var(--escala)}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--roxo);color:#fff;font-family:Nunito,system-ui,sans-serif;font-size:16px;min-height:100vh}
+body{margin:0;background:var(--roxo);color:#fff;font-family:Nunito,system-ui,sans-serif;font-size:16px}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;cursor:pointer}
 [hidden]{display:none!important}
 :focus-visible{outline:3px solid var(--amarelo);outline-offset:3px;border-radius:8px}
-.splash{display:grid;place-items:center;min-height:100vh;text-align:center;padding:24px}
+.splash{display:grid;place-items:center;min-height:var(--vh100);text-align:center;padding:24px}
 .splash .spin{animation:giraL 3s linear infinite;filter:drop-shadow(4px 5px 0 rgba(0,0,0,.3))}
 @keyframes giraL{to{transform:rotate(360deg)}}
 .splash p{font-weight:700;color:var(--claro)}
@@ -33,6 +36,11 @@ button{font:inherit;color:inherit;cursor:pointer}
 .marca-logo b{color:var(--amarelo);font-weight:700}
 .marca-logo svg{transition:transform .3s}
 a.marca-logo:hover svg{transform:rotate(-14deg) scale(1.08)}
+
+/* Cada tela ocupa a altura toda e o rodapé fica sempre no fim */
+#telaLogin,#telaApp{display:flex;flex-direction:column;min-height:var(--vh100)}
+#telaApp>.wrap{width:100%;flex:1 0 auto}
+.fapp,.fgrande{margin-top:auto}
 
 /* =====================================================================
    TELA DE LOGIN
@@ -53,7 +61,7 @@ a.marca-logo:hover svg{transform:rotate(-14deg) scale(1.08)}
 #hdrLogin .cta{background:#8b5cf6;border:2px solid #b79bff;border-radius:10px;padding:10px 20px;box-shadow:0 0 16px rgba(139,92,246,.55);transition:background .2s}
 #hdrLogin .cta:hover{background:#9d74fa}
 #hdrLogin :focus-visible{outline:3px solid var(--amarelo);outline-offset:3px;border-radius:6px}
-.lmain{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 72px)}
+.lmain{display:grid;grid-template-columns:1fr 1fr;flex:1 0 auto;min-height:calc(var(--vh100) - 72px)}
 .vitrine{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:28px;padding:40px;color:#fff;text-align:center}
 .vitrine>*:not(.fundo){position:relative;z-index:1}
 .fundo{position:absolute;inset:0;z-index:0;pointer-events:none;user-select:none}
@@ -275,7 +283,7 @@ details.senha .campo{margin:14px 0 0}
 .pbar input{width:240px}
 .pbar select:focus,.pbar input:focus{outline:3px solid var(--amarelo);outline-offset:2px}
 #stSalvo{font-size:14px;font-weight:800;color:var(--claro);margin-left:auto}
-.pg{display:grid;grid-template-columns:1fr 1fr;gap:20px;height:clamp(440px,calc(100vh - 290px),760px)}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:20px;height:clamp(440px,calc(var(--vh100) - 290px),760px)}
 .pg .card{display:flex;flex-direction:column;overflow:hidden;min-height:0}
 .ph{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 14px;background:#f1ecc4;border-bottom:2px solid #e6e0b8;min-height:54px}
 .pt{font-weight:800}
@@ -881,7 +889,7 @@ kbd{background:#fff;border:1px solid #cfc9a8;border-bottom-width:3px;border-radi
   <footer class="fapp">
     <div class="logo" style="font-size:18px"><svg width="28" height="28" aria-hidden="true"><use href="#lg"/></svg><span>Code<b>Stars</b></span></div>
     <nav><a href="#" data-v="ajuda">Ajuda</a><a href="#">Termos</a><a href="#">Privacidade</a></nav>
-    <span>© 2026 CodeStars · v4 (praticar, ranking e ajuda)</span>
+    <span>© 2026 CodeStars · v5 (escala menor)</span>
   </footer>
 </div>
 
@@ -915,6 +923,13 @@ const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>'
 const okEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 const plural = (n, um, varios) => n === 1 ? um : varios;
 const rmov = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// com "zoom" no CSS a unidade vh também encolhe; por isso a altura da tela é calculada aqui
+function ajustaAltura(){
+  const z = parseFloat(getComputedStyle(document.documentElement).zoom) || 1;
+  document.documentElement.style.setProperty('--vh100', (innerHeight / z) + 'px');
+}
+ajustaAltura(); addEventListener('resize', ajustaAltura);
 
 let tmAviso;
 function aviso(t){ const a=$('aviso'); a.textContent=t; a.classList.add('on'); clearTimeout(tmAviso); tmAviso=setTimeout(()=>a.classList.remove('on'),3400); }
